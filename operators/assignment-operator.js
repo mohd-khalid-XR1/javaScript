@@ -1,0 +1,23 @@
+let y = 1;
+
+// compound assignment operator
+let x = 1
+
+// x = x + 5
+x += 5
+console.log(x);
+
+
+////////////////////////////////////////////////////////////////
+
+let m = 2;
+m -= 2
+console.log(m);
+
+
+//////////////////////////////////////////////////////////////////////
+let modulus = 5
+
+// modulus = modulus % 5
+modulus %= 5
+console.log(modulus);
