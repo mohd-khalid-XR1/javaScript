@@ -1,3 +1,7 @@
+let name = 'mohd hamza'
+console.log(name.charAt(0));
+
+
 // string properties 
 
 const username = "mohd hamza 453453 ";
@@ -48,3 +52,4 @@ const text = "apple banana apple";
 console.log(text.replace("apple",'manogo'));
 console.log(text.replaceAll("apple",'mango'));
 
+// 
