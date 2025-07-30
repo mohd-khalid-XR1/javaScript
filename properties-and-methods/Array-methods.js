@@ -77,3 +77,16 @@ let numbers4 = [1, 4, 5];
 
 numbers4.splice(1, 0, 2, 3)
 console.log(numbers4);
+
+
+// forEach
+
+let fruits = ['apple', 'mang0', 'lichi', 'tomato', 'carrot']
+
+// for (let i = 0; i < fruits.length; i++) {
+//     console.log(fruits[i]);
+// }
+
+fruits.forEach(function (element, index, arr) {
+    console.log(element, index);
+})

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="i">
+    <button id="btn">button</button>
+    <script>
+        const input = document.getElementById('i')
+        const button = document.getElementById("btn")
+        let previousArray = localStorage.getItem("todo")
+        console.log(previousArray);
+        let parsedArray = JSON.parse(previousArray)
+        console.log(parsedArray);
+        let array = parsedArray ? parsedArray : []
+        button.addEventListener("click", function (e) {
+            console.log(input.value);
+            array.push(input.value)
+            const stringfifyArray = JSON.stringify(array)
+            console.log(stringfifyArray);
+            localStorage.setItem("todo", stringfifyArray)
+
+            
+            array.forEach(function (element, index) {
+                console.log(element);
+            })
+           
+        })
+    </script>
+</body>
+
+</html>

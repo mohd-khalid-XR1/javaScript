@@ -52,4 +52,12 @@ const text = "apple banana apple";
 console.log(text.replace("apple",'manogo'));
 console.log(text.replaceAll("apple",'mango'));
 
-// 
+//  ` `
+
+const backticks = `hello 
+world`
+console.log(backticks);
+
+let age = 39
+const insertValue = `my age is ${age}`
+console.log(insertValue);
