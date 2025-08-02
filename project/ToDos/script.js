@@ -3,6 +3,7 @@ const title = document.getElementById("title")
 const content = document.getElementById("content")
 const main = document.getElementById("main")
 const btn = document.getElementById("btn")
+const cancel_timeout_btn = document.getElementById('cancel_timeout_btn')
 let todoArray = []
 
 // main.setAttribute("class","fsdljf")
@@ -15,6 +16,7 @@ loopOnTodo()
 
 let isUpdateTodo = false
 let updatedTodoIndex;
+let timeout_id;
 
 form.addEventListener("submit", function (e) { // e is event object (object)
     e.preventDefault();
@@ -24,6 +26,10 @@ form.addEventListener("submit", function (e) { // e is event object (object)
         createTodo()
     }
 })
+cancel_timeout_btn.onclick = function (e) {
+    clearTimeout(timeout_id)
+    cancel_timeout_btn.style.display = "none"
+}
 
 
 function createTodo() {
@@ -36,7 +42,7 @@ function createTodo() {
         content: _content_,
         completed: false
     }
-    todoArray.push(todoObject)
+    todoArray.unshift(todoObject)
 
     localStorage.setItem("todo", JSON.stringify(todoArray))
     console.log(todoArray);
@@ -44,14 +50,12 @@ function createTodo() {
     content.value = ''
     loopOnTodo()
 }
-
 function loopOnTodo() {
     main.innerHTML = ''
     todoArray.forEach(function (element, index) {
         renderTodo(element, index)
     })
 }
-
 function renderTodo(element, index) {
     // console.log(element);
     const card = document.createElement("div")
@@ -82,10 +86,15 @@ function renderTodo(element, index) {
     card.append(card_title_trash_edit_div, para)
     main.appendChild(card)
 }
-
 function deleteTodo(e, index) {
     console.log(index);
     todoArray.splice(index, 1)
+    cancel_timeout_btn.style.display = "inline"
+    const id = setTimeout((function () {
+        alert("Your todo is deleted")
+        cancel_timeout_btn.style.display = "none"
+    }), 3000)
+    timeout_id = id
     console.log(todoArray);
     localStorage.setItem("todo", JSON.stringify(todoArray))
     loopOnTodo()
