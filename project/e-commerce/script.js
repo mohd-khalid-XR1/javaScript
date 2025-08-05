@@ -19,7 +19,7 @@ function renderProducts(productsArray) {
         main.innerHTML = main.innerHTML + `
         <div>
         <img src='${product.thumbnail}' alt='${product.title}'/>
-        <h2>${product.title}</h2>
+        <h2><a href="product.html?id=${product.id}">${product.title}</a></h2>
         <span>${product.category}</span>
         <br>
         <span> Rs. ${product.price * 100}</span>

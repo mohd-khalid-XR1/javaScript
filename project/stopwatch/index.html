@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>Lap</button>
+    <button id="start_btn">start</button>
+    <button>Reset</button>
+    <hr>
+    <span id="hourElement">0</span>
+    <span id="minuteElement">0</span>
+    <span id="secondElement">0</span>
+    <span id="centiSecElement">0</span>
+
+    <script>
+        const start_btn = document.getElementById("start_btn")
+        const centiSecElement = document.getElementById("centiSecElement")
+        const secondElement = document.getElementById("secondElement")
+        const minuteElement = document.getElementById("minuteElement")
+        const hourElement = document.getElementById("hourElement")
+
+        let centiSecondCounter = 0;
+        let secondCounter = 0;
+        let minuteCounter = 0;
+        let hourCounter = 0
+
+        start_btn.addEventListener("click", startCounter)
+
+        function startCounter() {
+            setInterval(() => {
+                centiSecondCounter++
+                centiSecElement.textContent = centiSecondCounter
+                if (centiSecondCounter === 99) {
+                    centiSecondCounter = 0
+                    secondCounter++
+                    secondElement.textContent = secondCounter
+                    if (secondCounter === 59) {
+                        secondCounter = 0
+                        minuteCounter++
+                        minuteElement.textContent = minuteCounter
+                        if (minuteCounter === 59) {
+                            minuteCounter = 0;
+                            hourCounter++
+                            hourElement.textContent = hourCounter
+                        }
+                    }
+                }
+            }, 10)
+        }
+
+    </script>
+
+</body>
+
+</html>
