@@ -4,6 +4,7 @@ const content = document.getElementById("content")
 const main = document.getElementById("main")
 const btn = document.getElementById("btn")
 const cancel_timeout_btn = document.getElementById('cancel_timeout_btn')
+
 let todoArray = []
 
 // main.setAttribute("class","fsdljf")
@@ -30,10 +31,12 @@ cancel_timeout_btn.onclick = function (e) {
     clearTimeout(timeout_id)
     cancel_timeout_btn.style.display = "none"
 }
-
-
 function createTodo() {
     let _title_ = title.value
+    if (_title_.length > 50) {
+        alert("title should not be more than 50 letters")
+        return
+    }
     let _content_ = content.value
     // console.log(_content_, _title_);
 
@@ -132,3 +135,6 @@ function updateTodo() {
 
     loopOnTodo()
 }
+
+
+

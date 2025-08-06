@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         * {
             margin: 0;
@@ -13,22 +15,55 @@
             box-sizing: border-box;
         }
 
+        body {
+            background-color: bisque;
+        }
+
         #form_ol {
             margin: 10px 0px;
-         
+
         }
-        .card_title_trash_edit_div{
+
+        .card_title_trash_edit_div {
             display: flex;
             gap: 20px;
         }
-        #cancel_timeout_btn{
+
+        #cancel_timeout_btn {
             display: none;
+        }
+
+        #sidebar_btn{
+           margin-left: 400px;
+        }
+
+        #sidebar {
+            height: 100dvh;
+            width: 24dvw;
+            background-color: green;
+            position: fixed;
+            top: 0;
+            left: -24dvw;
+            z-index: 5;
+            transition-property: left;
+            transition-delay: 0;
+            transition-duration: 0.5s;
+            transition-timing-function: ease;
         }
     </style>
 </head>
 
 <body>
-    <h1>Todo List</h1>
+
+    <nav>
+        <h1>Todo List</h1>
+        <h1>todo</h1>
+        <button id="theme_btn">Dark mode</button>
+        <button id="sidebar_btn">sidebar toggle</button>
+    </nav>
+    <section id="sidebar">
+        sidebar
+    </section>
     <form id="form">
         <input type="text" id="title">
         <textarea name="" id="content"></textarea>
@@ -48,6 +83,7 @@
     </main>
 
     <script src="./script.js"></script>
+    <script src="theme.js"></script>
 </body>
 
 </html>
