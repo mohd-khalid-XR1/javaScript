@@ -90,3 +90,25 @@ let fruits = ['apple', 'mang0', 'lichi', 'tomato', 'carrot']
 fruits.forEach(function (element, index, arr) {
     console.log(element, index);
 })
+
+
+// findIndex
+
+console.log("---------------------------------------");
+
+const ar1 = ['apple', 'mango', 'banana', 'tomato']
+const x = ar1.findIndex((element) => {
+    if (element === 'mango') return true
+})
+
+console.log(x);
+
+// map()
+
+console.log("-------------------------------------------");
+
+const array2 = [1, 2, 3, 4, 5, 6]
+const result2 = array2.map((element, index, array) => {
+    return element + 5
+})
+console.log(result2);

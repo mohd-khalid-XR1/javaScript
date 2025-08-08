@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        section {
+
+            width: 505px;
+            height: 500px;
+            margin: 10px auto 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            width: calc(500px/3);
+            height: calc(500px/3);
+            border: 1px solid rgb(0, 0, 0);
+            font-size: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button{
+            padding: 7px 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </section>
+
+    <div>
+        <button id="X_btn">X</button>
+        <button id="O_btn">O</button>
+    </div>
+
+    <h1 id="winnerElement"></h1>
+    <script src="./script.js"></script>
+</body>
+
+</html>
