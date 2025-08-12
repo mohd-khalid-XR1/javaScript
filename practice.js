@@ -1,22 +1,7 @@
-const producsts = [
-    {
-        id : 3,
-        name : 'fsdlfj',
-        price : 493,
-    },
-     {
-        id : 3,
-        name : 'fsdlfj',
-        price : 493,
-    },
-     {
-        id : 3,
-        name : 'fsdlfj',
-        price : 493,
-    },
-     {
-        id : 3,
-        name : 'fsdlfj',
-        price : 493,
-    }
-]
+console.log(true && 0 && 2);
+
+let bankBalance = undefined
+
+console.log(bankBalance || 0);
+
+

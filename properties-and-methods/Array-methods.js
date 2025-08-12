@@ -112,3 +112,40 @@ const result2 = array2.map((element, index, array) => {
     return element + 5
 })
 console.log(result2);
+
+// filter()
+console.log('----------------------------------------------------------------------');
+
+
+const num = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+const resultFilter = num.filter((element, index, array) => {
+    // console.log(`element = ${element} , index = ${index} , array = ${array}`);
+    if (element < 5) return element
+})
+
+console.log(resultFilter);
+
+console.log('---------------------------------------------------');
+
+
+async function getProducts() {
+    const response = await fetch(`https://dummyjson.com/products?limit=15`)
+    const data = await response.json()
+    console.log(data?.products);
+    const productsArray = data?.products
+    if (Array.isArray(productsArray)) {
+        const result = productsArray.filter((product, index) => {
+            if (product?.price <= 10) {
+                return product
+            }
+        })
+        console.log(result);
+    }else{
+        console.log("products is not array");
+    }
+
+}
+
+
+getProducts()
+
