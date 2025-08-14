@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100dvw;
+            height: 100dvh;
+            overflow-x: hidden;
+        }
+
+        #slider-container div {
+            display: none;
+            height: 60dvh;
+            width: 100dvw;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        #slider-container div.active {
+            display: block;
+        }
+
+        #slider-container div:nth-child(1) {
+            background-image: url("https://images.unsplash.com/photo-1754851357071-e22af991e590?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        }
+
+        #slider-container div:nth-child(2) {
+            background-image: url("https://plus.unsplash.com/premium_photo-1754738812997-949c791bd52a?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        }
+
+        #slider-container div:nth-child(3) {
+            background-image: url("https://images.unsplash.com/photo-1754597302822-4b96f3442d3f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        }
+
+        #slider-container div:nth-child(4) {
+            background-image: url("https://images.unsplash.com/photo-1754766621748-2a96cbf56a1f?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        }
+
+        #slider-container div:nth-child(5) {
+            background-image: url("https://images.unsplash.com/photo-1735029660539-59df2bded95b?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        }
+
+        button{
+            padding: 5px 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section id="slider-container">
+            <div class="active">
+                <h2>Slide 1</h2>
+            </div>
+            <div>
+                <h2>Slide 2</h2>
+            </div>
+            <div>
+                <h2>Slide 3</h2>
+            </div>
+            <div>
+                <h2>Slide 4</h2>
+            </div>
+            <div>
+                <h2>Slide 5</h2>
+            </div>
+        </section>
+        <div>
+            <button id="previousBtn">Previous</button>
+            <button id="nextBtn">Next</button>
+        </div>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
